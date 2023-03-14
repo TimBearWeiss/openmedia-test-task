@@ -8,14 +8,14 @@ function App() {
   const [isPlay, setIsPlay] = useState(false);
   const [volumeSlider, setVolumeSlider] = useState("");
   const [progressBar, setProgressBar] = useState("");
-  const [value, setValue] = useState("00" + ":" + "00");
+  const [value, setValue] = useState("00:00");
   const [colorProgress, setColorProgress] = useState("");
   const [isDoneload, setIsDoneload] = useState(true);
 
   const logOut = () => {
     setIsPost(false);
     setUrl("");
-    setValue(0);
+    setValue("00:00");
     setIsPlay(false);
   };
 
