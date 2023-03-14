@@ -10,3 +10,7 @@ npm start
 "https://lalalai.s3.us-west-2.amazonaws.com/media/split/a7564eb8-cbf2-40e2-9cb8-6061d8d055a7/no_vocals";
 
 "https://c5.radioboss.fm:18084/stream";
+
+
+
+Примечание: Следует создать два фрагмента реакт с формой и плеером, используя useContext для переноса общего состояния. Доделать валидацию. 
