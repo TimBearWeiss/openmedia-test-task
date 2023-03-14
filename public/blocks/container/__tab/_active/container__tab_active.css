@@ -1,0 +1,11 @@
+.container__tab_active {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  opacity: 1;
+  display: inline;
+  border-bottom: 2px solid #f5f6f7;
+}
