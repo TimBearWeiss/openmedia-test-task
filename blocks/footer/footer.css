@@ -1,0 +1,14 @@
+.footer {
+  padding: 40px;
+  margin: 0;
+  font-family: "Space Grotesk";
+  color: gray;
+  margin: 0 auto 0 auto;
+  max-width: 1370px;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    padding: 20px;
+  }
+}

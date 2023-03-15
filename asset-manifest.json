@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/openmedia-test-task/static/css/main.a6e1021f.css",
+    "main.js": "/openmedia-test-task/static/js/main.eea6ad5f.js",
+    "index.html": "/openmedia-test-task/index.html",
+    "static/media/icon.svg": "/openmedia-test-task/static/media/icon.203be3555b3daccdc899.svg",
+    "static/media/Pause.svg": "/openmedia-test-task/static/media/Pause.a2c57db44874202a29ad.svg",
+    "static/media/Play.svg": "/openmedia-test-task/static/media/Play.9e665ded8609d2db8b82.svg",
+    "main.a6e1021f.css.map": "/openmedia-test-task/static/css/main.a6e1021f.css.map",
+    "main.eea6ad5f.js.map": "/openmedia-test-task/static/js/main.eea6ad5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6e1021f.css",
+    "static/js/main.eea6ad5f.js"
+  ]
+}

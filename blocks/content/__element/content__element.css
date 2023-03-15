@@ -1,0 +1,19 @@
+.content__element {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  color: #eeeeee;
+  border-bottom: 1px solid rgba(207, 211, 214, 0.1);
+}
+
+@media screen and (max-width: 700px) {
+  .content__element {
+    flex-direction: column;
+    max-width: 500px;
+  }
+}
