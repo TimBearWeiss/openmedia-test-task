@@ -38,6 +38,7 @@
   grid-row-start: 2;
   grid-row-end: 2;
   display: block;
+  position: relative;
 }
 
 @media screen and (max-width: 1135px) {
@@ -442,18 +443,19 @@
   line-height: 16px;
   letter-spacing: -0.3px;
   color: #c6a827;
-  position: relative;
-  top: -110px;
+  display: block;
+  position: absolute;
+  top: 160px;
 }
 
 @media screen and (max-width: 1135px) {
   .error-message {
-    top: -58px;
+    top: 145px;
   }
 }
 
 @media screen and (max-width: 920px) {
   .error-message {
-    top: 0;
+    top: 130px;
   }
 }

@@ -35,7 +35,6 @@ function App() {
       })
       .catch(() => {
         setErrorMessage(true);
-        console.log("catch");
       });
   };
 
