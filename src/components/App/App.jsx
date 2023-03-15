@@ -203,12 +203,9 @@ function App() {
             <button className="button"></button>
           </div>
           {errorMessage && (
-            <>
-              <img></img>
-              <span className="error-message">
-                Unsuitable link, choose another one
-              </span>
-            </>
+            <span className="error-message">
+              Unsuitable link, choose another one
+            </span>
           )}
         </form>
       )}
