@@ -11,16 +11,44 @@ function App() {
   const [value, setValue] = useState("00:00");
   const [colorProgress, setColorProgress] = useState("");
   const [isDoneload, setIsDoneload] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(false);
+
+  const validationLink = (url) => {
+    fetch(url)
+      .then((res) => {
+        if (res.ok) {
+          if (res.headers.get("Content-type").startsWith("audio")) {
+            setIsPost(true);
+            setErrorMessage(false);
+          } else {
+            setErrorMessage(true);
+            return Promise.reject(
+              new Error("unsuitable link, choose another one")
+            );
+          }
+        } else {
+          setErrorMessage(true);
+          return Promise.reject(
+            new Error("unsuitable link, choose another one")
+          );
+        }
+      })
+      .catch(() => {
+        setErrorMessage(true);
+        console.log("catch");
+      });
+  };
+
+  const addSong = (evt) => {
+    evt.preventDefault();
+    validationLink(url);
+  };
 
   const logOut = () => {
     setIsPost(false);
     setUrl("");
     setValue("00:00");
     setIsPlay(false);
-  };
-
-  const addSong = () => {
-    setIsPost(true);
   };
 
   const play = () => {
@@ -126,6 +154,7 @@ function App() {
               ref={(el) => {
                 setProgressBar(el);
               }}
+              defaultValue="0"
               type="range"
               min="0"
               max="100"
@@ -174,6 +203,11 @@ function App() {
             />
             <button className="button"></button>
           </div>
+          {errorMessage && (
+            <span className="error-message">
+              Unsuitable link, choose another one
+            </span>
+          )}
         </form>
       )}
       <p className="text">Without any restrictions for free</p>

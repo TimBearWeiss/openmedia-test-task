@@ -37,6 +37,7 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 2;
+  display: block;
 }
 
 @media screen and (max-width: 1135px) {
@@ -431,4 +432,28 @@
 
 .input:invalid {
   border: 0.5px solid #c6a827;
+}
+
+.error-message {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+  color: #c6a827;
+  position: relative;
+  top: -110px;
+}
+
+@media screen and (max-width: 1135px) {
+  .error-message {
+    top: -58px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .error-message {
+    top: 0;
+  }
 }
