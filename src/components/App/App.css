@@ -200,6 +200,11 @@
   color: #a4a3a4;
 }
 
+.input-icon {
+  background: #fff url(../../../public/images/24.svg) no-repeat;
+  background-position: top 50% right 16px;
+}
+
 @media screen and (max-width: 1135px) {
   .input {
     width: 350px;

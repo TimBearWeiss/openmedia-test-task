@@ -2,31 +2,39 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  // общее состояние
   const [url, setUrl] = useState("");
-  const [audio, setAudio] = useState("");
   const [isPost, setIsPost] = useState(false);
+  // состояние плеера
+  const [audio, setAudio] = useState("");
   const [isPlay, setIsPlay] = useState(false);
   const [volumeSlider, setVolumeSlider] = useState("");
   const [progressBar, setProgressBar] = useState("");
   const [value, setValue] = useState("00:00");
   const [colorProgress, setColorProgress] = useState("");
   const [isDoneload, setIsDoneload] = useState(true);
+  // состояние формы
+
   const [errorMessage, setErrorMessage] = useState(false);
+  const [input, setInput] = useState("");
 
   const validationLink = (url) => {
     fetch(url)
       .then((res) => {
         if (res.ok) {
           if (res.headers.get("Content-type").startsWith("audio")) {
+            input.className = "input";
             setIsPost(true);
             setErrorMessage(false);
           } else {
+            input.className = "input input-icon";
             setErrorMessage(true);
             return Promise.reject(
               new Error("unsuitable link, choose another one")
             );
           }
         } else {
+          input.className = "input input-icon";
           setErrorMessage(true);
           return Promise.reject(
             new Error("unsuitable link, choose another one")
@@ -34,6 +42,7 @@ function App() {
         }
       })
       .catch(() => {
+        input.className = "input input-icon";
         setErrorMessage(true);
       });
   };
@@ -80,7 +89,7 @@ function App() {
 
         setValue(curMins + ":" + curSecs);
       } else {
-        setValue("00" + ":" + "00");
+        setValue("00:00");
       }
     };
   }
@@ -194,6 +203,9 @@ function App() {
           <label className="caption">Insert the link</label>
           <div className="cell">
             <input
+              ref={(el) => {
+                setInput(el);
+              }}
               className="input"
               onChange={(e) => setUrl(e.target.value)}
               type="url"
