@@ -1,0 +1,198 @@
+.audioBlock {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+@media screen and (max-width: 920px) {
+  .audioBlock {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    margin: 0 auto 0 auto;
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .audioBlock {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .audioBlock {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .audioBlock {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .audioBlock {
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .audioBlock {
+    max-width: 270px;
+  }
+}
+
+.back {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  color: #1b191c;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 0 0 20px 0;
+}
+
+.controller {
+  background-color: #cfd3d6;
+  max-width: 620px;
+  padding: 20px;
+  position: relative;
+}
+
+@media screen and (max-width: 920px) {
+  .controller {
+    margin: 0 auto 0 auto;
+    align-items: center;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: white;
+  /* анимация */
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    left: 0px;
+    top: 0px;
+    width: 0%;
+  }
+  25% {
+    width: 30%;
+  }
+
+  100% {
+    left: 100%;
+    top: 0px;
+    width: 0%;
+  }
+}
+
+.play {
+  background-image: url(../../../public/images/Play.svg);
+  background-color: #cfd3d6;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.play:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.pause {
+  background-image: url(../../../public/images/Pause.svg);
+  background-color: #cfd3d6;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.pause:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.progressBar {
+  -webkit-appearance: none;
+  width: 100%;
+  background: #adacad;
+  height: 2px;
+  margin: 50px 0 50px 0;
+}
+
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.audioBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paybackTime {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+  color: #1b191c;
+}
+
+.volumeBox {
+  position: relative;
+  max-width: 70%;
+}
+
+.colorProgress {
+  background-color: #000000;
+  width: 40%;
+  height: 2px;
+  position: absolute;
+  top: 13px;
+  left: 0;
+}
+
+.volumeSlider {
+  -webkit-appearance: none;
+  max-width: 252px;
+  height: 2px;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  background: #000000;
+  cursor: pointer;
+  z-index: 3;
+}
