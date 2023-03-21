@@ -24,6 +24,5 @@ You will also see any lint errors in the console.
 
 ## Примечание:
 
-Следует создать два фрагмента реакт с формой и плеером.
 
 Cсылка деплоя: https://timbearweiss.github.io/openmedia-test-task/
