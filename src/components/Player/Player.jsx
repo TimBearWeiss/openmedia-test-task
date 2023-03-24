@@ -98,7 +98,12 @@ const Player = () => {
     audio.oncanplay = () => {
       setIsDoneload(false);
     };
+
+    audio.onabort = () => {
+      setIsDoneload(false);
+    };
   }
+
   return (
     <div className={style.audioBlock}>
       <h2 className={style.back} onClick={logOut}>

@@ -1,6 +1,6 @@
 .App {
   margin: 0 auto 0 auto;
-  width: 90vw;
+  max-width: 1370px;
   background-color: #eeeeee;
   display: grid;
   grid-template-columns: 1fr 1fr;

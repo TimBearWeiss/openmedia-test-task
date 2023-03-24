@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { switchWindow } from "../../services/actions/form";
-import { setUrl } from "../../services/actions/form";
-import "./Form.module.css";
+import { switchWindow, switchModal, setUrl } from "../../services/actions/form";
 import style from "./Form.module.css";
 
 const Form = () => {
@@ -20,16 +18,17 @@ const Form = () => {
             input.className = style.input;
             dispatch(switchWindow(true));
             setErrorMessage(false);
+            dispatch(switchModal(false));
           } else {
             input.className = style.input + " " + style.inputIcon;
-            setErrorMessage(true);
+            dispatch(switchModal(true));
             return Promise.reject(
               new Error("unsuitable link, choose another one")
             );
           }
         } else {
           input.className = style.input + " " + style.inputIcon;
-          setErrorMessage(true);
+          dispatch(switchModal(true));
           return Promise.reject(
             new Error("unsuitable link, choose another one")
           );
@@ -37,8 +36,20 @@ const Form = () => {
       })
       .catch(() => {
         input.className = style.input + " " + style.inputIcon;
-        setErrorMessage(true);
+        dispatch(switchModal(true));
       });
+  };
+
+  const ValidationInput = (e) => {
+    dispatch(setUrl(e.target.value));
+    const re =
+      /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setErrorMessage(true);
+    } else {
+      setErrorMessage(false);
+    }
   };
 
   const addSong = (evt) => {
@@ -47,7 +58,7 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={addSong} className={style.form}>
+    <form onSubmit={addSong} className={style.form} noValidate>
       <label className={style.caption}>Insert the link</label>
       <div className={style.cell}>
         <input
@@ -55,7 +66,7 @@ const Form = () => {
             setInput(el);
           }}
           className={style.input}
-          onChange={(e) => dispatch(setUrl(e.target.value))}
+          onChange={(e) => ValidationInput(e)}
           type="url"
           placeholder="https://"
           required
