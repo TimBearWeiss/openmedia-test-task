@@ -26,3 +26,6 @@ You will also see any lint errors in the console.
 
 
 Cсылка деплоя: https://timbearweiss.github.io/openmedia-test-task/
+
+Выполненные доп задания: 
+№ 5 Реализовать всплывающие уведомления, в которых можно вывести возникшие ошибки и предупреждения.
